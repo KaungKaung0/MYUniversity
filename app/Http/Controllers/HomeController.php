@@ -13,9 +13,17 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        session_start();
         $this->middleware('auth');
     }
 
+    public function logout()
+    {
+        session_destroy();
+        session_unset();
+        auth()->logout();
+        return redirect()->route('login');
+    }
     /**
      * Show the application dashboard.
      *

@@ -14,3 +14,8 @@
 Auth::routes();
 
 Route::get('/admin_panel', 'HomeController@index')->name('home');
+
+Route::get('/logout' , 'HomeController@logout')->name('logout');
+
+
+Route::resource('articles' , 'ArticleController');
