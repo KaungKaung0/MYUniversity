@@ -13,8 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+          $this->middleware('auth');
         session_start();
-        $this->middleware('auth');
     }
 
     public function logout()
@@ -31,6 +31,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('BackEnd/home');
+        return view('adminpanel');
     }
 }
